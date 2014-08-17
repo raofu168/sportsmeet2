@@ -20,8 +20,8 @@
     <%= f.text_field :address, class: "form-control" %>
   </div>
   <div class="form-group">
-    <%= f.label :filepicker_url %><br>
-    <%= f.filepicker_field :image, class: "form-control" %>
+    <%= f.label :image %><br>
+    <%= f.filepicker_field :image, button_text: "Add image" %>
   </div>
   <div class="actions">
     <%= f.submit class: "btn btn-primary" %>
