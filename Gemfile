@@ -14,5 +14,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 gem 'rails_12factor', group: :production
-gem "figaro"
+gem 'figaro'
 gem 'filepicker-rails'
+gem 'devise'
+gem 'mini_magick'
