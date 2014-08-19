@@ -3,10 +3,12 @@
 
     <%= filepicker_image_tag @location.image %>
 
-<h2>
-  
+<h2>  
   <%= @location.name %>
 </h2>
+
+<div class="star-rating" data-score= <%= @avg_rating %> ></div>
+<p><%= "#{@reviews.length} reviews" %></p>
 
 <p>
   <strong>Address:</strong>
@@ -14,6 +16,16 @@
 </p>
 
 <%= link_to "Write a Review", new_location_review_path(@location), class: "btn btn-primary" %>
+
+<br><br>
+
+<span align="left"><iframe
+  width="230"
+  height="150"
+  frameborder="0" style="border:0"
+  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB0Ps8ZpDqpoFR6Xz-NgGGuFoMBj8gjnfk
+    &q=<%= @location.address.parameterize %>&zoom=14">
+</iframe></span>
 	</div>
 
 	<div class="col-md-9">
@@ -39,8 +51,7 @@
 <script>
  $('.star-rating').raty({
  path: 'https://s3.amazonaws.com/sportsmeet/stars',
- 
- score: function() {
+  score: function() {
  	return $(this).attr('data-score');
  }
  });
